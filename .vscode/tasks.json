@@ -1,0 +1,76 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "clang++ build active file",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "g++",
+                "${file}",
+                "-std=c++11",
+                "-I/home/asus/c_ksp/krpc-cpp-0.4.8/include/",
+                "-I/usr/local/lib",
+                "-lkrpc",
+                "-lprotobuf",
+                "`pkg-config --cflags --libs protobuf`",
+                "-o",
+                "${fileDirname}/test_4"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "g++ build active file",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${fileDirname}/test.cpp",
+                "-std=c++11",
+                "-I/home/asus/c_ksp/krpc-cpp-0.4.8/include/",
+                "-I/usr/local/lib",
+                "-lkrpc",
+                "-lprotobuf",
+                "`pkg-config",
+                "--cflags",
+                "--libs",
+                "protobuf`",
+                "-o",
+                "${fileDirname}/test_4"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "g++-7 build active file",
+            "command": "/usr/bin/g++-7",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "cpp build active file",
+            "command": "/usr/bin/cpp",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
